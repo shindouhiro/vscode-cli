@@ -1,5 +1,5 @@
 {
-  "name": "@vscode-sync/cli",
+  "name": "@shindou/vscode-sync",
   "type": "module",
   "version": "0.1.2",
   "bin": {
