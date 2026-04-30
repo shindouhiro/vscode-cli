@@ -11,11 +11,13 @@
 ## 安装
 
 ```bash
-# 全局安装
-npm install -g @shindou/vscode-sync
+# 使用 pnpm 全局安装
+pnpm add -g @shindou/vscode-sync
 
-# 或者直接使用 npx 运行
+# 或者直接使用 npx / pnpm dlx 运行
 npx @shindou/vscode-sync apply
+# 或
+pnpm dlx @shindou/vscode-sync apply
 ```
 
 ## 命令
