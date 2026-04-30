@@ -1,0 +1,28 @@
+{
+  "name": "@vscode-sync/cli",
+  "type": "module",
+  "version": "0.1.0",
+  "bin": {
+    "vscode-sync": "dist/index.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "cac": "catalog:prod",
+    "jsonc-parser": "catalog:prod",
+    "picocolors": "catalog:prod"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:dev",
+    "tsdown": "catalog:dev",
+    "tsx": "catalog:dev",
+    "vitest": "catalog:dev"
+  }
+}
