@@ -6,7 +6,8 @@
     "vscode-sync": "dist/index.mjs"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "build": "tsdown",
