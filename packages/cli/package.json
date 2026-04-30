@@ -12,6 +12,7 @@
     "build": "tsdown",
     "dev": "tsx src/index.ts",
     "lint": "eslint .",
+    "prepack": "pnpm build",
     "test": "vitest run"
   },
   "dependencies": {

@@ -7,10 +7,13 @@
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
-    "vscode-sync": "node packages/cli/dist/index.mjs"
+    "vscode-sync": "node packages/cli/dist/index.mjs",
+    "release": "bumpp -r"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
+    "bumpp": "catalog:dev",
+    "changelogithub": "catalog:dev",
     "eslint": "catalog:dev",
     "typescript": "catalog:dev",
     "vitest": "catalog:dev"

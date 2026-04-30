@@ -9,6 +9,8 @@ catalogs:
   dev:
     '@antfu/eslint-config': ^6.1.0
     '@types/node': ^24.10.1
+    bumpp: ^11.0.1
+    changelogithub: ^14.0.0
     eslint: ^9.39.1
     tsdown: ^0.16.7
     tsx: ^4.20.6
