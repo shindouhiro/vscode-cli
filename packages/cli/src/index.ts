@@ -19,8 +19,8 @@ cli
   .option('--dry-run', '只展示计划，不写入文件或安装扩展')
   .action(options => runSafely(async () => {
     const config = await readConfig()
+    const source = await resolveSource(options.source, config.source)
     const editor = await resolveApplyEditor(options.editor, config.editor)
-    const source = options.source ?? config.source ?? DEFAULT_SOURCE
 
     const result = await applySync({
       source,
@@ -163,6 +163,36 @@ async function promptEditor(defaultEditor: EditorId): Promise<EditorId> {
       return safeDefaultEditor
 
     return normalizeEditor(trimmedAnswer)
+  }
+  finally {
+    rl.close()
+  }
+}
+
+async function resolveSource(optionSource?: string, configSource?: string): Promise<string> {
+  if (optionSource)
+    return optionSource
+
+  if (!process.stdin.isTTY || !process.stdout.isTTY)
+    return configSource ?? DEFAULT_SOURCE
+
+  return promptSource(configSource ?? DEFAULT_SOURCE)
+}
+
+async function promptSource(defaultSource: string): Promise<string> {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  })
+
+  try {
+    const answer = await rl.question(`${pc.bold('请输入远程配置源地址')}\n[默认: ${pc.dim(defaultSource)}]: `)
+    const trimmedAnswer = answer.trim()
+
+    if (!trimmedAnswer)
+      return defaultSource
+
+    return trimmedAnswer
   }
   finally {
     rl.close()
