@@ -7,14 +7,15 @@
 - `settings.json`
 - `global.code-snippets`
 - `extensions.json`
-
-## 使用
+ 
+## 安装
 
 ```bash
-pnpm install
-pnpm build
-pnpm vscode-sync apply --dry-run
-pnpm vscode-sync apply
+# 全局安装
+npm install -g @shindou/vscode-sync
+
+# 或者直接使用 npx 运行
+npx @shindou/vscode-sync apply
 ```
 
 ## 命令
